@@ -8,7 +8,8 @@
     <title>SmartPhone Trop Cool Samere</title>
 </head>
 
-<body class="bg-slate-50 mx-auto max-w-4xl px-4 lg:mt-10 py-16 font-[Graphik] text-stone-600 tracking-wider flex flex-col gap-10">
+<body
+    class="bg-slate-50 mx-auto max-w-4xl px-4 lg:mt-10 py-16 font-[Graphik] text-stone-600 tracking-wider flex flex-col gap-10">
 
     <!-- texture de background -->
     <div class="bg-repeat w-screen h-screen opacity-5 fixed inset-0 -z-10"
@@ -34,34 +35,41 @@
 
     <!-- Section Avis -->
     <div id="avis"></div>
-    <script src="./js/avis.js"></script>
-
-    <div class="">
+    <script type="module" src="./js/avis.js"></script>
+    <div class="flex flex-col items-center gap-5">
         <template></template>
         <p class="text-xl mb-5">Nos derniers avis client</p>
         <div id="avis-container" class="grid gap-5 grid-cols-1
-        md:grid-cols-2
+        sm:grid-cols-2
         lg:grid-cols-3">
             <!-- map dernier avis -->
-            <template id="avis-template" class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
-                <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+
+            <template id="avis-template"
+                class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
+                <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio
+                    obcaecati.</p>
                 <p id="author" class="text-right">Jean Kevin</p>
             </template>
             <div class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.
+                </p>
                 <p class="text-right">Jean Kevin</p>
             </div>
             <div class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.
+                </p>
                 <p class="text-right">Jean Kevin</p>
             </div>
             <div class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.
+                </p>
                 <p class="text-right">Jean Kevin</p>
             </div>
-            <!-- popup ajout avis -->
-            <!-- btn ouvrir popup -->
         </div>
+
+        <button class="bg-slate-400 text-slate-50 rounded-2xl py-2 px-5 transition hover:scale-105 cursor-pointer">Posté un commentaire</button>
+        <!-- popup ajout avis -->
+        <!-- btn ouvrir popup -->
     </div>
 
     <!-- Section FAQ -->

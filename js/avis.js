@@ -20,7 +20,7 @@ const container = document.getElementById("avis-container");
 const template = document.getElementById("avis-template");
 
 avis.forEach(avi => {
-    console.log(avi)
+    // console.log(avi)
     // const clone = template.content.cloneNode(true);
     // clone.querySelector("#text").textContent = avi.text;
     // clone.querySelector("#author").textContent = avi.author;
