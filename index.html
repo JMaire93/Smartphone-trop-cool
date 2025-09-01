@@ -85,6 +85,66 @@
       });
     </script>
 
+    <div id="contact">
+
+        <div class="container my-5">
+  <h2 class="mb-4">Contactez-nous</h2>
+  <form id="contactForm" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="nom" name="nom" required>
+      <div class="invalid-feedback">Le nom est obligatoire.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="prenom" class="form-label">Prénom</label>
+      <input type="text" class="form-control" id="prenom" name="prenom" required>
+      <div class="invalid-feedback">Le prénom est obligatoire.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+      <div class="invalid-feedback">Veuillez entrer un email valide.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+      <div class="invalid-feedback">Le message est obligatoire.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+</div>
+
+<!-- Modale Bootstrap -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Merci pour votre message, nous vous répondrons rapidement ✅
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+ <script src="./js/contact.js"></script>
+
+
+
+
+
+
 </body>
 
 </html>
