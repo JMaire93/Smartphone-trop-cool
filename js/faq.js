@@ -9,7 +9,11 @@ const faqData = [
 		answer: "Oui, vous disposez de 30 jours pour retourner le produit."
 	},
 	{
+<<<<<<< HEAD
         question: "Le produit est-il compatible avec tous les smartphones ?",
+=======
+		question: "Le produit est-il compatible avec tous les smartphones ?",
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
 		answer: "Oui, il est compatible avec la plupart des smartphones récents (iOS et Android)."
 	},
 	{
@@ -17,7 +21,11 @@ const faqData = [
 		answer: "Après l'achat, vous recevrez un email avec un lien de suivi de votre commande."
 	},
 	{
+<<<<<<< HEAD
         question: "Proposez-vous une assistance technique ?",
+=======
+		question: "Proposez-vous une assistance technique ?",
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
 		answer: "Oui, notre équipe support est disponible 7j/7 par email et téléphone."
 	}
 ];
@@ -25,7 +33,11 @@ const faqData = [
 // Fonction pour générer la FAQ dynamiquement
 function renderFAQ() {
     // Sélectionner le conteneur HTML où afficher la FAQ
+<<<<<<< HEAD
 	const container = document.getElementById('faq-list');
+=======
+	const container = document.getElementById('faq');
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
     // Vérifie si le conteneur existe.
 	if (!container) return;
 	container.innerHTML = '';
@@ -33,11 +45,19 @@ function renderFAQ() {
     // item représente un élément du tableau (question/réponse)
     // index représente la position de l'élément dans le tableau
 	faqData.forEach((item, index) => {
+<<<<<<< HEAD
         // Création des éléments
 		const faqItem = document.createElement('div');
         // Ajout de la classe pour le style
 		faqItem.className = 'faq-item';
         
+=======
+		// Création des éléments
+		const faqItem = document.createElement('div');
+        // Ajout de la classe pour le style
+		faqItem.className = 'faq-item';
+
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
 		const questionBtn = document.createElement('button');
 		questionBtn.className = 'faq-question';
         // Methode setattribute pour ajouter/modifier un attribut html.
@@ -45,32 +65,54 @@ function renderFAQ() {
 		questionBtn.setAttribute('aria-controls', `faq-answer-${index}`); // Cet attribut indique quel élément du DOM est contrôlé par chacun des boutons.
 		questionBtn.id = `faq-question-${index}`; // Identifiant unique pour chaque question
 		questionBtn.innerHTML = `<span class="faq-icon">&#9654;</span> ${item.question}`; // Contenu du bouton
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
 		const answerDiv = document.createElement('div'); // Crée un nouvel élément <div> qui servira à afficher la réponse à la question
 		answerDiv.className = 'faq-answer'; // Ajoute la classe CSS faq-answer à ce div, pour pouvoir le styliser facilement
 		answerDiv.id = `faq-answer-${index}`; //  Donne un identifiant unique à chaque réponse, permet de faire le lien avec le bouton de la question (pour l’accessibilité et le contrôle).
 		answerDiv.setAttribute('aria-labelledby', questionBtn.id); // Lien entre la question et la réponse
 		answerDiv.hidden = true; // La réponse est cachée par défaut
 		answerDiv.textContent = item.answer; // insère le texte de la réponse
+<<<<<<< HEAD
         
 		// Gestion du clic
 		questionBtn.addEventListener('click', () => {
             const expanded = questionBtn.getAttribute('aria-expanded') === 'true';
+=======
+
+		// Gestion du clic
+		questionBtn.addEventListener('click', () => {
+			const expanded = questionBtn.getAttribute('aria-expanded') === 'true';
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
 			questionBtn.setAttribute('aria-expanded', !expanded);
 			answerDiv.hidden = expanded;
 			// Animation icône
 			const icon = questionBtn.querySelector('.faq-icon');
 			if (icon) {
+<<<<<<< HEAD
                 icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(90deg)'; // Rotation de l'icône
 				icon.style.transition = 'transform 0.2s'; // Ajoute une transition pour l'animation
 			}
 		});
         
+=======
+				icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(90deg)'; // Rotation de l'icône
+				icon.style.transition = 'transform 0.2s'; // Ajoute une transition pour l'animation
+			}
+		});
+
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
 		faqItem.appendChild(questionBtn);
 		faqItem.appendChild(answerDiv);
 		container.appendChild(faqItem);
 	});
 }
+<<<<<<< HEAD
 
     // Appel direct pour générer la FAQ dès que tout est prêt
     renderFAQ();
+=======
+>>>>>>> c5e1050 (Ajout de la FAQ avec petit style)
