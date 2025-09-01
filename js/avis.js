@@ -1,17 +1,17 @@
 let avis = [
     {
-        text: "1Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati",
-        author: "Jean Kevin1",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati1",
+        author: "Jean Kevin",
         date: 1756725906,
     },
     {
-        text: "2Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati",
-        author: "Jean Kevin2",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati2",
+        author: "Jean Kevin",
         date: 1756725906,
     },
     {
-        text: "3Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati",
-        author: "Jean Kevin3",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati3",
+        author: "Jean Kevin",
         date: 1756725906,
     }
 ]
@@ -47,6 +47,7 @@ btnPopupClose.addEventListener("click", () => {
 
 const btnPopupSubmit = document.getElementById("btnPopupSubmit")
 const popupText = document.getElementById("popupText")
+popupText.value = "AHAHAH ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati"
 btnPopupSubmit.addEventListener("click", () => {
     avis.push({ text: popupText.value, author: "Jean Kevin", date: Date.now() })
     updateAvis()
