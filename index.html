@@ -8,16 +8,60 @@
     <title>SmartPhone Trop Cool Samere</title>
 </head>
 
-<body class="bg-red-500">
+<body class="bg-slate-50 mx-auto max-w-4xl px-4 lg:mt-10 py-16 font-[Graphik] text-stone-600 tracking-wider flex flex-col gap-10">
+
+    <!-- texture de background -->
+    <div class="bg-repeat w-screen h-screen opacity-5 fixed inset-0 -z-10"
+        style="background: url('src/background.svg'); background-size: 400px 400px;"></div>
+
+    <!-- présentation du produit -->
+    <div class="flex flex-col items-center text-center gap-10">
+        <p class="text-2xl tracking-widest transition-[letter-spacing] duration-300 ease-in-out hover:tracking-wider">Le
+            Fairphone (Gen. 6)</p>
+        <img src="src/phone.webp" alt=""
+            class="bg-slate-100 w-md rounded-2xl shadow-lg transition hover:scale-105 m-auto p-5">
+        <p>Découvrez une expérience smartphone inédite : modularité, durabilité, haute performance, zéro distraction et
+            encore plus équitable.</p>
+    </div>
+
 
     <div id="contact"></div>
     <script src="./js/contact.js"></script>
 
     <div id="price"></div>
     <script src="./js/price.js"></script>
-    
+
     <div id="avis"></div>
     <script src="./js/avis.js"></script>
+    <div class="">
+        <template></template>
+        <p class="text-xl mb-5">Nos derniers avis client</p>
+        <div id="avis-container" class="grid gap-5 grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-3">
+            <!-- map dernier avis -->
+
+            <template id="avis-template" class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
+                <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+                <p id="author" class="text-right">Jean Kevin</p>
+            </template>
+            <div class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+                <p class="text-right">Jean Kevin</p>
+            </div>
+            <div class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+                <p class="text-right">Jean Kevin</p>
+            </div>
+            <div class="relative bg-slate-100 p-5 rounded-2xl shadow-lg transition hover:scale-105">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, recusandae distinctio obcaecati.</p>
+                <p class="text-right">Jean Kevin</p>
+            </div>
+
+            <!-- popup ajout avis -->
+            <!-- btn ouvrir popup -->
+        </div>
+    </div>
 
     <div id="faq"></div>
     <script src="./js/faq.js"></script>
