@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css" />
     <title>SmartPhone Trop Cool Samere</title>
 </head>
+<<<<<<< HEAD
 <body>
     <div id="price">
     </div>
@@ -13,5 +15,51 @@
     <script src="/js/price.js"></script>
     <script src="/js/avis.js"></script>
     <script src="/js/faq.js"></script>
+=======
+
+<body class="bg-red-500">
+
+    <div id="contact"></div>
+    <script src="./js/contact.js"></script>
+    <script>
+        fetch("components/contact.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("contact").innerHTML = html;
+            });
+    </script>
+
+    <div id="price"></div>
+    <script src="./js/price.js"></script>
+    <script>
+        fetch("components/price.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("price").innerHTML = html;
+            });
+    </script>
+
+    <div id="avis"></div>
+    <script src="./js/avis.js"></script>
+    <script>
+        fetch("components/avis.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("avis").innerHTML = html;
+            });
+    </script>
+
+    <div id="faq"></div>
+    <script src="./js/faq.js"></script>
+    <script>
+        fetch("components/faq.html")
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById("faq").innerHTML = html;
+            });
+    </script>
+
+>>>>>>> 1759e28770ba735493d95753a173a3caca7afff5
 </body>
+
 </html>
