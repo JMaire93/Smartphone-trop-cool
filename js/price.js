@@ -1,5 +1,7 @@
 // recup de la div dans l'index
 const div = document.getElementById("price")
+const canvas = document.getElementById('canvas')
+let chart = null
 // initialisation du prix de base de l'article et de tous ses additifs
 const basePrice = 300
 let colorPrice = 0 
@@ -10,6 +12,7 @@ let colorPrice = 0
 //affichage du prix initial
 const showPrice = document.createElement("div")
 showPrice.textContent = `${basePrice} euro`
+updateGraph()
 //fonction permettant de calculer le prix appelée à chaque changement des options
 function calculatePrice() {
     return basePrice + colorPrice + capacityPrice + premiumPrice + garanteePrice + accessoriesPrice
@@ -51,6 +54,7 @@ color.addEventListener('change',(e)=>{
     e.preventDefault()
     colorPrice = colorAddPrice(color.value)
     showPrice.textContent = calculatePrice() + ' euro'
+    updateGraph ()
 }) 
 
 
@@ -84,20 +88,25 @@ capacity.addEventListener('change',(e)=>{
     e.preventDefault()
     capacityPrice = capacityAddPrice(capacity.value)
     showPrice.textContent = calculatePrice() + ' euro'
+    updateGraph ()
 }) 
 
 
                                         // PARTIE OPTION PREMIUM
-
+const premiumDiv = document.createElement('div')
 //création d'une checkbox pour l'état premium 
+const premiumLabel = document.createElement('label')
+premiumLabel.textContent = 'option premium'
 const premium = document.createElement("input")
 premium.type = "checkbox"
+premiumDiv.append(premiumLabel, premium)
 
 //évènement sur le changement de la checkbox pour ajouter ou non le prix premium à l'article et changer son affichage
 premium.addEventListener('change',(e)=>{
     e.preventDefault()
     premiumPrice = (premium.checked)? 50 : 0
     showPrice.textContent = calculatePrice() + ' euro'
+    updateGraph ()
 })
 
 
@@ -143,6 +152,7 @@ function garanteeAddPrice(garantee) {
         e.preventDefault()
         garanteePrice = garanteeAddPrice(garantee.value)
         showPrice.textContent = calculatePrice() + ' euro'
+        updateGraph ()
     }) 
     
 
@@ -185,9 +195,57 @@ function garanteeAddPrice(garantee) {
         input.addEventListener('change', (e)=>{
             accessoriesPrice += (input.checked)? accesory.price : - accesory.price
             showPrice.textContent = calculatePrice() + ' euro'
+            updateGraph ()
         })
     })
 
 
     //ajout des éléments liés au prix de l'article dans la division récupérée initialement dans le HTML
-    div.append(showPrice, color, capacity, premium, garantee, accesoriesDiv)
+    div.append(showPrice, color, capacity, premiumDiv, garantee, accesoriesDiv)
+
+function updateGraph () {
+if (chart) chart.destroy()
+
+const chartData = {
+    labels: ['Prix de base', 'Couleur', 'Capacité', 'Premium', 'Garantie', 'Accessoires'],
+    datasets: [{
+        label: 'Coût en euros',
+        data: [
+            basePrice,
+            colorPrice,
+            capacityPrice,
+            premiumPrice,
+            garanteePrice,
+            accessoriesPrice
+        ],
+        backgroundColor: [
+            'rgba(100, 100, 255, 0.5)',
+            'rgba(255, 100, 100, 0.5)',
+            'rgba(100, 255, 100, 0.5)',
+            'rgba(255, 200, 0, 0.5)',
+            'rgba(200, 0, 255, 0.5)',
+            'rgba(0, 200, 200, 0.5)'
+        ],
+        borderColor: 'rgba(0, 0, 0, 0.8)',
+        borderWidth: 1
+    }]
+}
+
+chart = new Chart(canvas, {
+    type: 'bar',
+    data: chartData,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Chart.js Floating Bar Chart'
+            }
+        }
+    }
+})
+
+}

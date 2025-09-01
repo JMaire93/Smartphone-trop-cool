@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>SmartPhone Trop Cool Samere</title>
 </head>
 
@@ -28,7 +29,9 @@
     <div id="contact"></div>
     <script src="./js/contact.js"></script>
 
-    <div id="price"></div>
+    <div id="price">
+        <canvas id="canvas">
+    </div>
     <script src="./js/price.js"></script>
 
     <div id="avis"></div>
@@ -63,8 +66,12 @@
         </div>
     </div>
 
-    <div id="faq"></div>
-    <script src="./js/faq.js"></script>
+
+        <section id="faq" aria-labelledby="faq-title" class="faq-section">
+            <h2 id="faq-title">Foire aux questions</h2>
+            <div id="faq-list"></div>
+        </section>
+        <script src="./js/faq.js"></script>
 
 </body>
 
