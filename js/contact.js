@@ -3,11 +3,12 @@ console.log("contact")
 document.addEventListener("DOMContentLoaded", () => {
     //charger le HTML
   const form = document.getElementById("contactForm");
+  console.log(form)
   
   const modal = new bootstrap.Modal(document.getElementById("confirmationModal"));
 
   form.addEventListener("submit", function (event) {
-   
+   console.log("first")
     event.preventDefault();
     event.stopPropagation();
 
