@@ -9,15 +9,15 @@ const faqData = [
 		answer: "Oui, vous disposez de 30 jours pour retourner le produit."
 	},
 	{
-		question: "Le produit est-il compatible avec tous les smartphones ?",
+        question: "Le produit est-il compatible avec tous les smartphones ?",
 		answer: "Oui, il est compatible avec la plupart des smartphones récents (iOS et Android)."
 	},
 	{
-		question: "Comment suivre ma commande ?",
+        question: "Comment suivre ma commande ?",
 		answer: "Après l'achat, vous recevrez un email avec un lien de suivi de votre commande."
 	},
 	{
-		question: "Proposez-vous une assistance technique ?",
+        question: "Proposez-vous une assistance technique ?",
 		answer: "Oui, notre équipe support est disponible 7j/7 par email et téléphone."
 	}
 ];
@@ -25,19 +25,19 @@ const faqData = [
 // Fonction pour générer la FAQ dynamiquement
 function renderFAQ() {
     // Sélectionner le conteneur HTML où afficher la FAQ
-	const container = document.getElementById('faq');
-    // Vérifie si le conteneur existe.
+	const container = document.getElementById('faq-list');
+	// Vérifie si le conteneur existe.
 	if (!container) return;
 	container.innerHTML = '';
     // Parcourir chaque question/réponse du tableau et prévoir deux propriétés 
     // item représente un élément du tableau (question/réponse)
     // index représente la position de l'élément dans le tableau
 	faqData.forEach((item, index) => {
-		// Création des éléments
+        // Création des éléments
 		const faqItem = document.createElement('div');
         // Ajout de la classe pour le style
 		faqItem.className = 'faq-item';
-
+        
 		const questionBtn = document.createElement('button');
 		questionBtn.className = 'faq-question';
         // Methode setattribute pour ajouter/modifier un attribut html.
@@ -51,22 +51,25 @@ function renderFAQ() {
 		answerDiv.setAttribute('aria-labelledby', questionBtn.id); // Lien entre la question et la réponse
 		answerDiv.hidden = true; // La réponse est cachée par défaut
 		answerDiv.textContent = item.answer; // insère le texte de la réponse
-
+        
 		// Gestion du clic
 		questionBtn.addEventListener('click', () => {
-			const expanded = questionBtn.getAttribute('aria-expanded') === 'true';
+            const expanded = questionBtn.getAttribute('aria-expanded') === 'true';
 			questionBtn.setAttribute('aria-expanded', !expanded);
 			answerDiv.hidden = expanded;
 			// Animation icône
 			const icon = questionBtn.querySelector('.faq-icon');
 			if (icon) {
-				icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(90deg)'; // Rotation de l'icône
+                icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(90deg)'; // Rotation de l'icône
 				icon.style.transition = 'transform 0.2s'; // Ajoute une transition pour l'animation
 			}
 		});
-
+        
 		faqItem.appendChild(questionBtn);
 		faqItem.appendChild(answerDiv);
 		container.appendChild(faqItem);
 	});
 }
+
+// Appel direct pour générer la FAQ dès le chargement du script
+renderFAQ();
